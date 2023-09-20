@@ -1,0 +1,28 @@
+---
+interface Props {
+  name: string
+  image_path: string
+  url: string
+  categorys: string[]
+}
+
+const { name, image_path, url, categorys } = Astro.props
+---
+
+<a
+  class="block px-6 pb-6 pt-8 max-w-sm border border-slate-300 rounded-md shadow-sm transition-transform duration-100 select-none hover:cursor-pointer hover:scale-95"
+  href={url}>
+  <img class="mx-auto max-w-xs max-h-28" src={image_path} alt={name} />
+  <div class="mt-6">
+    <div class="flex flex-wrap gap-2">
+      {
+        categorys.map(category => (
+          <span class="text-xs p-1 text-black-medium font-medium rounded-md bg-primary/20">
+            {category}
+          </span>
+        ))
+      }
+    </div>
+    <h2 class="text-black-dark font-medium mt-2">{name}</h2>
+  </div>
+</a>

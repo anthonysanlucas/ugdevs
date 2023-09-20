@@ -1,0 +1,63 @@
+---
+import Base from '@/layouts/Base.astro'
+import Form from '@/components/calculadoraug/Form.astro'
+import FormInput from '@/components/calculadoraug/FormInput.astro'
+import FormOutput from '@/components/calculadoraug/FormOutput.astro'
+import SubmitButton from '@/components/calculadoraug/SubmitButton.astro'
+import Header from '@/components/calculadoraug/Header.astro'
+---
+
+<Base
+  currentUrl="calculadoraug/promedio-parcial"
+  titlePage="Promedio parcial | Simulador de calificaciones de la Universidad de Guayaquil | Calculadora UG | UG Devs"
+  descriptionPage="Calcula tu promedio parcial, calificación de final de semestre o averigua cuánto debes obtener en el examen de recuperación para aprobar.">
+  <section class="section-container py-14">
+    <Header partialGradePage={true} finalGradePage={false} />
+    <section class="mt-10">
+      <h1 class="text-black-dark text-center text-lg mb-4 text-balance">
+        Calculadora de Promedio Parcial
+      </h1>
+      <Form formId="partialgradeForm">
+        <Fragment slot="inputs">
+          <FormInput id="formative-grade" labelName="Gestión Formativa" isRequired={true} />
+          <FormInput id="practice-grade" labelName="Gestión Práctica" isRequired={true} />
+          <FormInput id="exam-grade" labelName="Acreditación y Validación" isRequired={true} />
+        </Fragment>
+        <Fragment slot="actions">
+          <FormOutput id="partial-result" />
+          <SubmitButton />
+        </Fragment>
+      </Form>
+    </section>
+  </section>
+</Base>
+
+<script>
+  const partialgradePage = document.getElementById('partialgradePage') as HTMLAnchorElement
+
+  const formativegradeInput = document.getElementById('formative-grade') as HTMLInputElement
+  const practicegradeInput = document.getElementById('practice-grade') as HTMLInputElement
+  const examgradeInput = document.getElementById('exam-grade') as HTMLInputElement
+  const partialResult = document.getElementById('partial-result') as HTMLTextAreaElement
+
+  partialgradePage.classList.add('text-primary')
+  document.getElementById('partialgradeForm').addEventListener('submit', e => {
+    e.preventDefault()
+
+    partialResult.value = partialAverage(
+      formativegradeInput.valueAsNumber,
+      practicegradeInput.valueAsNumber,
+      examgradeInput.valueAsNumber
+    )
+  })
+
+  function partialAverage(formativeGrade: number, practiceGrade: number, examGrade: number) {
+    return `Promedio Parcial: ${roundNumber(
+      formativeGrade * 0.33 + practiceGrade * 0.33 + examGrade * 0.34
+    )}`
+  }
+
+  function roundNumber(value: number): number {
+    return +(Math.round(parseFloat(value + 'e+2')) + 'e-2')
+  }
+</script>

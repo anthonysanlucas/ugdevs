@@ -1,0 +1,26 @@
+---
+import InformationPage from '@/layouts/InformationPage.astro'
+import InstagramLink from '@/components/informationPage/InstagramLink.astro'
+import FacebookLink from '@/components/informationPage/FacebookLink.astro'
+import WhatsAppLink from '@/components/informationPage/WhatsAppLink.astro'
+---
+
+<InformationPage
+  titlePage="ANNELY STORE | Emprendimientos Estudiantiles | UG Devs"
+  descriptionPage=" Ofrecemos una amplia gama de productos para el cuidado de la piel, maquillaje, accesorios de moda y mucho más."
+  currentUrl="emprendimientos/annely-store"
+  nameInfo="ANNELY STORE"
+  image_path="/entrepreneurship/annelystore.webp"
+  categorys={['Belleza', 'Accesorios']}>
+  <p class="text-black-medium max-w-xl" slot="description">
+    Ofrecemos una amplia gama de productos para el cuidado de la piel, maquillaje, accesorios de
+    moda, relojes para él y ella y mucho más. Nuestra tienda es tu ventanilla única para todo lo
+    relacionado con la belleza y el estilo. Encuentra todo lo que necesitas para realzar tu belleza
+    y expresar tu personalidad en un solo lugar.
+  </p>
+  <div class="flex flex-wrap justify-start items-center gap-4" slot="social">
+    <InstagramLink url="https://www.instagram.com/annely_store/" />
+    <FacebookLink url="https://www.facebook.com/annelystoreniki" />
+    <WhatsAppLink url="https://wa.me/593939866142" />
+  </div>
+</InformationPage>

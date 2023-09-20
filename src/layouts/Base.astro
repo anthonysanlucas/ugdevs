@@ -1,0 +1,48 @@
+---
+import HeaderPage from '@/components/HeaderPage.astro'
+import FooterPage from '@/components/FooterPage.astro'
+import '@/styles/main.css'
+
+interface Props {
+  currentUrl: string
+  titlePage: string
+  descriptionPage: string
+}
+
+const { titlePage, descriptionPage, currentUrl } = Astro.props
+---
+
+<!doctype html>
+<html lang="es" class="scroll-pt-20 scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{titlePage}</title>
+    <meta name="title" content={titlePage} />
+    <meta name="description" content={descriptionPage} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content=`https://ugdevs.org/${currentUrl ?? null}` />
+    <meta property="og:title" content={titlePage} />
+    <meta property="og:description" content={descriptionPage} />
+    <meta property="og:image" content="https://i.postimg.cc/K8RBs3P3/ugdevs.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content=`https://ugdevs.org/${currentUrl ?? null}` />
+    <meta property="twitter:title" content={titlePage} />
+    <meta property="twitter:description" content={descriptionPage} />
+    <meta property="twitter:image" content="https://i.postimg.cc/K8RBs3P3/ugdevs.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-white bg-gradient-to-b from-white to-sky-50 min-h-screen">
+    <HeaderPage />
+    <main>
+      <slot />
+    </main>
+    <FooterPage />
+  </body>
+</html>

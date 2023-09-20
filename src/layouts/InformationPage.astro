@@ -1,0 +1,68 @@
+---
+import HeaderPage from '@/components/HeaderPage.astro'
+import FooterPage from '@/components/FooterPage.astro'
+import '@/styles/main.css'
+
+interface Props {
+  currentUrl: string
+  titlePage: string
+  descriptionPage: string
+  nameInfo: string
+  image_path: string
+  categorys: string[]
+}
+
+const { titlePage, descriptionPage, currentUrl, nameInfo, image_path, categorys } = Astro.props
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{titlePage}</title>
+    <meta name="title" content={titlePage} />
+    <meta name="description" content={descriptionPage} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content=`https://ugdevs.org/${currentUrl ?? null}` />
+    <meta property="og:title" content={titlePage} />
+    <meta property="og:description" content={descriptionPage} />
+    <meta property="og:image" content="https://i.postimg.cc/K8RBs3P3/ugdevs.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content=`https://ugdevs.org/${currentUrl ?? null}` />
+    <meta property="twitter:title" content={titlePage} />
+    <meta property="twitter:description" content={descriptionPage} />
+    <meta property="twitter:image" content="https://i.postimg.cc/K8RBs3P3/ugdevs.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-white bg-gradient-to-b from-white to-sky-50 min-h-screen">
+    <HeaderPage />
+    <main class="section-container py-14">
+      <section class="max-w-screen-lg mx-auto flex flex-col items-start md:flex-row gap-10">
+        <img class="w-full max-w-xs mx-auto" src={image_path} alt={nameInfo} />
+        <article>
+          <h1 class="text-black-dark text-xl mb-4 font-medium sm:text-4xl">{nameInfo}</h1>
+          <div class="flex flex-wrap items-center gap-4 mb-10">
+            {
+              categorys.map(category => (
+                <span class="p-1 text-black-medium font-medium rounded-md bg-primary/20">
+                  {category}
+                </span>
+              ))
+            }
+          </div>
+          <slot name="description" />
+          <h2 class="text-black-medium font-medium mt-10 mb-4">Encuéntranos en</h2>
+          <slot name="social" />
+        </article>
+      </section>
+    </main>
+    <FooterPage />
+  </body>
+</html>

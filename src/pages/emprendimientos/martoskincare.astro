@@ -1,0 +1,24 @@
+---
+import InformationPage from '@/layouts/InformationPage.astro'
+import InstagramLink from '@/components/informationPage/InstagramLink.astro'
+import WhatsAppLink from '@/components/informationPage/WhatsAppLink.astro'
+---
+
+<InformationPage
+  titlePage="MARTO SKINCARE | Emprendimientos Estudiantiles | UG Devs"
+  descriptionPage="Ofrecemos una selección de productos importados de alta calidad diseñados para transformar tu rutina de cuidado personal."
+  currentUrl="emprendimientos/martoskincare"
+  nameInfo="MARTO SKINCARE"
+  image_path="/entrepreneurship/martoskincare.webp"
+  categorys={['Salud', 'Cuidado Facial', 'Tratamientos']}>
+  <p class="text-black-medium max-w-xl" slot="description">
+    Ofrecemos una selección de productos importados de alta calidad diseñados para transformar tu
+    rutina de cuidado personal. Desde el cuidado facial hasta los productos esenciales, nuestro
+    catálogo te brinda todo lo que necesitas para lucir y sentirte mejor. Además, no solo te
+    ofrecemos productos excepcionales, sino que también te guiamos en el proceso.
+  </p>
+  <div class="flex flex-wrap justify-start items-center gap-4" slot="social">
+    <InstagramLink url="https://www.instagram.com/martoskincare/" />
+    <WhatsAppLink url="https://wa.me/593959502274" />
+  </div>
+</InformationPage>

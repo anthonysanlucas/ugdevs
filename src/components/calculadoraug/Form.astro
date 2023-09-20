@@ -1,0 +1,18 @@
+---
+interface Props {
+  formId: string
+}
+
+const { formId } = Astro.props
+---
+
+<form
+  id={formId}
+  class="grid grid-rows-2 gap-4 place-content-center max-w-lg mx-auto sm:grid-rows-none sm:grid-cols-[1fr,min-content]">
+  <fieldset class="grid border-none gap-y-2">
+    <slot name="inputs" />
+  </fieldset>
+  <div class="flex gap-y-4 flex-col items-center justify-center">
+    <slot name="actions" />
+  </div>
+</form>

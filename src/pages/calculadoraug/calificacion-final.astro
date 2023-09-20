@@ -1,0 +1,145 @@
+---
+import Base from '@/layouts/Base.astro'
+import Form from '@/components/calculadoraug//Form.astro'
+import FormInput from '@/components/calculadoraug/FormInput.astro'
+import FormOutput from '@/components/calculadoraug/FormOutput.astro'
+import SubmitButton from '@/components/calculadoraug/SubmitButton.astro'
+import Header from '@/components/calculadoraug/Header.astro'
+---
+
+<Base
+  currentUrl="calculadoraug/calificacion-final"
+  titlePage="Calificación final | Simulador de calificaciones de la Universidad de Guayaquil | Calculadora UG"
+  descriptionPage="Calcula tu calificación de final de semestre o cuánto debes obtener en el examen de recuperación para aprobar.">
+  <section class="section-container py-14">
+    <Header partialGradePage={false} finalGradePage={true} />
+    <h1 class="text-black-dark text-center text-lg mt-10 mb-4 text-balance">
+      Calculadora de Calificación Final
+    </h1>
+    <div
+      class="grid grid-rows-[1fr,max-content] place-items-center max-w-6xl mx-auto gap-x-8 md:grid-cols-2 md:grid-rows-none">
+      <Form formId="finalgradeForm">
+        <Fragment slot="inputs">
+          <FormInput id="firstterm-grade" labelName="Primer Parcial" isRequired={true} />
+          <FormInput id="secondterm-grade" labelName="Segundo Parcial" isRequired={true} />
+          <FormInput id="exam-grade" labelName="Examen" isRequired={false} />
+        </Fragment>
+        <Fragment slot="actions">
+          <FormOutput id="final-result" />
+          <SubmitButton />
+        </Fragment>
+      </Form>
+      <article class="mt-10 md:mt-0">
+        <span class="grid grid-cols-[max-content,1fr] gap-x-2 mb-4">
+          <svg
+            class="text-primary-dark mt-1"
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M15.3 4.1944e-09C15.9887 -3.83595e-05 16.6514 0.263093 17.1524 0.735555C17.6535 1.20802 17.9551 1.8541 17.9955 2.5416L18 2.7V15.3C18 15.9887 17.7369 16.6514 17.2644 17.1524C16.792 17.6535 16.1459 17.9551 15.4584 17.9955L15.3 18H2.7C2.01131 18 1.34864 17.7369 0.847565 17.2644C0.346494 16.792 0.0449032 16.1459 0.00450011 15.4584L4.1944e-09 15.3V2.7C-3.83595e-05 2.01131 0.263093 1.34864 0.735555 0.847565C1.20802 0.346494 1.8541 0.0449032 2.5416 0.00450011L2.7 4.1944e-09H15.3ZM9 8.1H8.1L7.9947 8.1063C7.77596 8.13232 7.57435 8.23766 7.42807 8.40237C7.28179 8.56708 7.201 8.77971 7.201 9C7.201 9.22029 7.28179 9.43292 7.42807 9.59763C7.57435 9.76234 7.77596 9.86768 7.9947 9.8937L8.1 9.9V12.6L8.1063 12.7053C8.12999 12.9062 8.22067 13.0933 8.36371 13.2363C8.50675 13.3793 8.6938 13.47 8.8947 13.4937L9 13.5H9.9L10.0053 13.4937C10.2062 13.47 10.3933 13.3793 10.5363 13.2363C10.6793 13.0933 10.77 12.9062 10.7937 12.7053L10.8 12.6L10.7937 12.4947C10.7722 12.3111 10.6946 12.1385 10.5716 12.0005C10.4486 11.8625 10.2861 11.7658 10.1061 11.7234L10.0053 11.7054L9.9 11.7V9L9.8937 8.8947C9.87001 8.6938 9.77933 8.50675 9.63629 8.36371C9.49325 8.22067 9.30619 8.12999 9.1053 8.1063L9 8.1ZM9.009 5.4L8.8947 5.4063C8.67596 5.43232 8.47435 5.53766 8.32807 5.70237C8.18179 5.86708 8.101 6.07971 8.101 6.3C8.101 6.52029 8.18179 6.73292 8.32807 6.89763C8.47435 7.06234 8.67596 7.16768 8.8947 7.1937L9 7.2L9.1143 7.1937C9.33304 7.16768 9.53465 7.06234 9.68093 6.89763C9.82721 6.73292 9.908 6.52029 9.908 6.3C9.908 6.07971 9.82721 5.86708 9.68093 5.70237C9.53465 5.53766 9.33304 5.43232 9.1143 5.4063L9.009 5.4Z"
+              fill="currentColor"></path>
+          </svg>
+          <p class="text-black-medium">
+            Ingresa solo tus calificaciones parciales si quieres saber cuánto necesitas obtener en
+            el examen de recuperación para aprobar.
+          </p>
+        </span>
+        <span class="grid grid-cols-[max-content,1fr] gap-x-2">
+          <svg
+            class="text-primary-dark mt-1"
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M15.3 4.1944e-09C15.9887 -3.83595e-05 16.6514 0.263093 17.1524 0.735555C17.6535 1.20802 17.9551 1.8541 17.9955 2.5416L18 2.7V15.3C18 15.9887 17.7369 16.6514 17.2644 17.1524C16.792 17.6535 16.1459 17.9551 15.4584 17.9955L15.3 18H2.7C2.01131 18 1.34864 17.7369 0.847565 17.2644C0.346494 16.792 0.0449032 16.1459 0.00450011 15.4584L4.1944e-09 15.3V2.7C-3.83595e-05 2.01131 0.263093 1.34864 0.735555 0.847565C1.20802 0.346494 1.8541 0.0449032 2.5416 0.00450011L2.7 4.1944e-09H15.3ZM9 8.1H8.1L7.9947 8.1063C7.77596 8.13232 7.57435 8.23766 7.42807 8.40237C7.28179 8.56708 7.201 8.77971 7.201 9C7.201 9.22029 7.28179 9.43292 7.42807 9.59763C7.57435 9.76234 7.77596 9.86768 7.9947 9.8937L8.1 9.9V12.6L8.1063 12.7053C8.12999 12.9062 8.22067 13.0933 8.36371 13.2363C8.50675 13.3793 8.6938 13.47 8.8947 13.4937L9 13.5H9.9L10.0053 13.4937C10.2062 13.47 10.3933 13.3793 10.5363 13.2363C10.6793 13.0933 10.77 12.9062 10.7937 12.7053L10.8 12.6L10.7937 12.4947C10.7722 12.3111 10.6946 12.1385 10.5716 12.0005C10.4486 11.8625 10.2861 11.7658 10.1061 11.7234L10.0053 11.7054L9.9 11.7V9L9.8937 8.8947C9.87001 8.6938 9.77933 8.50675 9.63629 8.36371C9.49325 8.22067 9.30619 8.12999 9.1053 8.1063L9 8.1ZM9.009 5.4L8.8947 5.4063C8.67596 5.43232 8.47435 5.53766 8.32807 5.70237C8.18179 5.86708 8.101 6.07971 8.101 6.3C8.101 6.52029 8.18179 6.73292 8.32807 6.89763C8.47435 7.06234 8.67596 7.16768 8.8947 7.1937L9 7.2L9.1143 7.1937C9.33304 7.16768 9.53465 7.06234 9.68093 6.89763C9.82721 6.73292 9.908 6.52029 9.908 6.3C9.908 6.07971 9.82721 5.86708 9.68093 5.70237C9.53465 5.53766 9.33304 5.43232 9.1143 5.4063L9.009 5.4Z"
+              fill="currentColor"></path>
+          </svg>
+          <p class="text-black-medium">
+            En caso de haber rendido el examen de recuperación o mejoramiento, ingresa tus
+            calificaciones parciales y la obtenida en el examen para obtener tu calificación de
+            final de semestre.
+          </p>
+        </span>
+      </article>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const firstTermInput = document.getElementById('firstterm-grade') as HTMLInputElement
+  const secondTermInput = document.getElementById('secondterm-grade') as HTMLInputElement
+  const examInput = document.getElementById('exam-grade') as HTMLInputElement
+  const finalResult = document.getElementById('final-result') as HTMLInputElement
+
+  document.getElementById('finalgradeForm').addEventListener('submit', e => {
+    e.preventDefault()
+
+    const firsttermGrade = firstTermInput.valueAsNumber
+    const secondtermGrade = secondTermInput.valueAsNumber
+    const examGrade = examInput.valueAsNumber ?? null
+
+    const PARTIAL_AVERAGE = average(firsttermGrade, secondtermGrade)
+
+    finalResult.value = basicConditions(PARTIAL_AVERAGE, examGrade)
+
+    if (PARTIAL_AVERAGE >= 3 && examGrade)
+      return (finalResult.value = newGrade(
+        PARTIAL_AVERAGE,
+        firsttermGrade,
+        secondtermGrade,
+        examGrade
+      ))
+
+    if (PARTIAL_AVERAGE >= 3 && PARTIAL_AVERAGE < 7 && !examGrade)
+      return (finalResult.value = necesaryExam(PARTIAL_AVERAGE))
+  })
+
+  function basicConditions(partialAverage: number, examGrade: number) {
+    if (partialAverage >= 9.5) return `Promedio:  ${partialAverage} \nExcelente Calificación`
+
+    if (partialAverage >= 7 && !examGrade)
+      return `Promedio: ${partialAverage} \nVálido para mejoramiento`
+
+    if (partialAverage < 3) return `Promedio: ${partialAverage} \nNo válido para recuperación`
+  }
+
+  function necesaryExam(partialAverage: number) {
+    return `Promedio: ${partialAverage} \nRecuperación: ${roundNumber(
+      (7 - partialAverage * 0.4) / 0.6
+    )}`
+  }
+
+  function newGrade(
+    partialAverage: number,
+    firsttermGrade: number,
+    secondtermGrade: number,
+    examGrade: number
+  ) {
+    return partialAverage >= 7
+      ? `Calificación Final: ${mejorationExam(firsttermGrade, secondtermGrade, examGrade)}`
+      : `Calificación Final: ${recuperationExam(partialAverage, examGrade)}`
+  }
+
+  function mejorationExam(firsttermGrade: number, secondtermGrade: number, examGrade: number) {
+    return examGrade < firsttermGrade && examGrade < secondtermGrade
+      ? average(firsttermGrade, secondtermGrade)
+      : average(examGrade, Math.max(firsttermGrade, secondtermGrade))
+  }
+
+  function recuperationExam(partialAverage: number, examGrade: number) {
+    return roundNumber(0.6 * examGrade + 0.4 * partialAverage)
+  }
+
+  function average(firstNumber: number, secondNumber: number) {
+    return roundNumber((firstNumber + secondNumber) / 2)
+  }
+
+  function roundNumber(value: number): number {
+    return +(Math.round(parseFloat(value + 'e+2')) + 'e-2')
+  }
+</script>

@@ -1,0 +1,26 @@
+---
+import InformationPage from '@/layouts/InformationPage.astro'
+import InstagramLink from '@/components/informationPage/InstagramLink.astro'
+import WhatsAppLink from '@/components/informationPage/WhatsAppLink.astro'
+import TiktokLink from '@/components/informationPage/TiktokLink.astro'
+---
+
+<InformationPage
+  titlePage="GEO SERVICES | Emprendimientos Estudiantiles | UG Devs"
+  descriptionPage="Ofrecemos servicios de reparación y mantenimiento de computadoras, licencias de software, equipos tecnológicos y desarrollo web."
+  currentUrl="emprendimientos/geoservices"
+  nameInfo="GEO SERVICES"
+  image_path="/entrepreneurship/geoservices.svg"
+  categorys={['Tecnología', 'Servicios', 'Venta de Equipos']}>
+  <p class="text-black-medium max-w-xl" slot="description">
+    Ofrecemos servicios de reparación y mantenimiento de computadoras, licencias de software,
+    equipos tecnológicos y desarrollo web para emprendedores estudiantiles, todo a precios
+    especiales para estudiantes. Simplificamos tus necesidades tecnológicas para que puedas
+    concentrarte en tu éxito académico y empresarial.
+  </p>
+  <div class="flex flex-wrap justify-start items-center gap-4" slot="social">
+    <InstagramLink url="https://www.instagram.com/geoservices.ec/" />
+    <TiktokLink url="https://www.tiktok.com/@geovilbal95?_t=8ffiJJrINQz&_r=1" />
+    <WhatsAppLink url="https://wa.me/message/TYATHDJLLQJRM1" />
+  </div>
+</InformationPage>

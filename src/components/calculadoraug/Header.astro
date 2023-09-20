@@ -1,0 +1,38 @@
+---
+interface Props {
+  partialGradePage: boolean
+  finalGradePage: boolean
+}
+
+const { partialGradePage, finalGradePage } = Astro.props
+---
+
+<header class="section-container">
+  <nav>
+    <ul
+      class="flex justify-center items-center text-black-medium text-center text-sm sm:text-base sm:gap-x-8">
+      <li>
+        <a
+          class:list={[
+            ' font-medium p-3 transition-colors duration-100 hover:bg-gray-100',
+            { 'text-primary bg-gray-100': partialGradePage }
+          ]}
+          href="/calculadoraug/promedio-parcial"
+          id="partialgradePage">
+          Promedio Parcial
+        </a>
+      </li>
+      <li>
+        <a
+          class:list={[
+            'font-medium p-3 transition-colors duration-100 hover:bg-gray-100',
+            { 'text-primary bg-gray-100': finalGradePage }
+          ]}
+          href="/calculadoraug/calificacion-final"
+          id="finalgradePage">
+          Calificación Final
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

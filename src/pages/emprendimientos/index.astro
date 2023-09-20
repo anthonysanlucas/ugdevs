@@ -1,0 +1,23 @@
+---
+import Base from '@/layouts/Base.astro'
+import { ENTREPRENEURSHIP } from '@/data/entrepreneurship.js'
+import EntrepreneurshipCard from '@/components/EntrepreneurshipCard.astro'
+---
+
+<Base
+  currentUrl="emprendimientos"
+  titlePage="Emprendimientos Estudiantiles | UG Devs"
+  descriptionPage="Descubre los emprendimientos creados por estudiantes de la Universidad de Guayaquil">
+  <section class="flex flex-wrap items-center justify-center gap-12 section-container py-14">
+    {
+      ENTREPRENEURSHIP.map(e => (
+        <EntrepreneurshipCard
+          name={e.name}
+          categorys={e.categorys}
+          image_path={e.image_path}
+          url={e.url}
+        />
+      ))
+    }
+  </section>
+</Base>

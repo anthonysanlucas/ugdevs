@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components { 
+  .section-container {
+    @apply max-w-screen-2xl mx-auto px-4 lg:px-10;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

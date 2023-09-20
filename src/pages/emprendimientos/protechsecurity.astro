@@ -1,0 +1,28 @@
+---
+import InformationPage from '@/layouts/InformationPage.astro'
+import InstagramLink from '@/components/informationPage/InstagramLink.astro'
+import FacebookLink from '@/components/informationPage/FacebookLink.astro'
+import WhatsAppLink from '@/components/informationPage/WhatsAppLink.astro'
+---
+
+<InformationPage
+  titlePage="PRO TECH SECURITY | Emprendimientos Estudiantiles | UG Devs"
+  descriptionPage="Somos expertos en soluciones tecnológicas integrales, con un enfoque especializado en seguridad, monitoreo y control."
+  currentUrl="emprendimientos/protechsecurity"
+  nameInfo="PRO TECH SECURITY"
+  image_path="/entrepreneurship/protechsecurity.webp"
+  categorys={['Tecnología', 'Seguridad', 'Monitoreo', 'Servicios']}>
+  <p class="text-black-medium max-w-xl" slot="description">
+    Somos expertos en soluciones tecnológicas integrales, con un enfoque especializado en seguridad,
+    monitoreo y control. Nuestro catálogo abarca desde sistemas de CCTV y GPS hasta barreras
+    biométricas y alarmas de vanguardia. Además, destacamos en el desarrollo de soluciones de
+    seguridad electrónica, informática, telecomunicaciones, automatización y energía renovable.
+    Estamos comprometidos con tu tranquilidad y eficiencia, ofreciendo soluciones a medida que
+    protegen lo que más te importa y optimizan tu entorno tecnológico.
+  </p>
+  <div class="flex flex-wrap justify-start items-center gap-4" slot="social">
+    <InstagramLink url="https://www.instagram.com/protech_ec/" />
+    <FacebookLink url="https://www.facebook.com/PROTECH.SEC.ECU/" />
+    <WhatsAppLink url="https://wa.me/593985508780" />
+  </div>
+</InformationPage>

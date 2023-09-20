@@ -1,0 +1,53 @@
+---
+interface Props {
+  id: string
+  labelName: string
+  isRequired: boolean
+}
+
+const { id, labelName, isRequired } = Astro.props
+---
+
+<div class="relative group">
+  {
+    isRequired ? (
+      <input
+        type="number"
+        id={id}
+        class="input__area relative text-black-medium  outline-none p-[3rem_10px_0.8rem_0.5rem] rounded-tr-md rounded-tl-md border-solid border-b border-b-gray-300  w-full  h-[3rem] max-w-[13rem] min-w-[9rem] bg-transparent transition-all duration-100 hover:border-b-primary focus:border-b-primary focus:bg-gray-100 [-moz-appearance:_textfield] [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
+        min="0"
+        max="10"
+        step="0.01"
+        placeholder=" "
+        autocomplete="off"
+        required
+      />
+    ) : (
+      <input
+        type="number"
+        id={id}
+        class="input__area relative text-black-medium  outline-none p-[3rem_10px_0.8rem_0.5rem] rounded-tr-md rounded-tl-md border-solid border-b border-b-gray-300  w-full  h-[3rem] max-w-[13rem] min-w-[9rem] bg-transparent transition-all duration-100 hover:border-b-primary focus:border-b-primary focus:bg-gray-100 [-moz-appearance:_textfield] [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
+        min="0"
+        max="10"
+        step="0.01"
+        placeholder=" "
+        autocomplete="off"
+      />
+    )
+  }
+
+  <label
+    for={id}
+    class="input__label absolute top-5 left-1 p-2 pointer-events-none text-black-medium text-sm transition-all duration-100 group-hover:text-primary">
+    {labelName}
+  </label>
+</div>
+
+<style>
+  .input__area:focus ~ .input__label,
+  .input__area:not(:placeholder-shown).input__area:not(:focus) ~ .input__label {
+    top: 0;
+    font-size: 0.875rem;
+    color: #0084ff;
+  }
+</style>
