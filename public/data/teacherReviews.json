@@ -117,7 +117,12 @@
   {
     "id": "024",
     "name": "FLORES MORAN MANUEL",
-    "reviews": []
+    "reviews": [
+      {
+        "text": "Es un buen profesor pero es muy estricto, casi todos se quedan con él xd pero enseña muy bien si pasas su materia es porque sí aprendistes.",
+        "date": "11/10/2023"
+      }
+    ]
   },
   {
     "id": "025",
