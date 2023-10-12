@@ -357,7 +357,12 @@
   {
     "id": "071",
     "name": "CHARCO AGUIRRE JORGE",
-    "reviews": []
+    "reviews": [
+      {
+        "text": "El ING es muy estricto, los deberes los reviso con mucha exigencia.",
+        "date": "11/10/2023"
+      }
+    ]
   },
   {
     "id": "072",
