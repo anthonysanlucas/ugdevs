@@ -17,7 +17,12 @@
   {
     "id": "004",
     "name": "ALVARADO UNAMUNO EDUARDO",
-    "reviews": []
+    "reviews": [
+      {
+        "text": "Excelente docente y persona, aprendes todo, toma en exámenes lo que explica en cada clase.",
+        "date": "12/10/2023"
+      }
+    ]
   },
   {
     "id": "005",
