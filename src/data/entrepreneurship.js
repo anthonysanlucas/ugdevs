@@ -22,11 +22,5 @@ export const ENTREPRENEURSHIP = [
     categorys: ['Salud', 'Cuidado Facial', 'Tratamientos'],
     image_path: '/entrepreneurship/martoskincare.webp',
     url: '/emprendimientos/martoskincare'
-  },
-  {
-    name: 'CHIQUIS DONIS',
-    categorys: ['Repostería', 'Pastelería'],
-    image_path: '/entrepreneurship/chiquisdonis.webp',
-    url: '/emprendimientos/chiquisdonis'
   }
 ]
