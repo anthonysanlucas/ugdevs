@@ -292,7 +292,12 @@
   {
     "id": "056",
     "name": "ABAD SACOTO KARLA",
-    "reviews": []
+    "reviews": [
+      {
+        "text": "Excelente maestra, explica bien y sabe llegar a sus estudiantes.",
+        "date": "12/10/2023"
+      }
+    ]
   },
   {
     "id": "057",
