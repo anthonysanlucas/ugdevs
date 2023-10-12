@@ -15,3 +15,44 @@ import Contributors from '@/components/home/Contributors.astro'
   <Entrepreneurship />
   <Contributors />
 </Base>
+
+<script>
+  const intersectionParams = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  }
+
+  function handleLeftIntersection(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-fade-left')
+        entry.target.classList.add('opacity-100')
+        observer.unobserve(entry.target)
+      }
+    })
+  }
+
+  function handleRightIntersection(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-fade-right')
+        entry.target.classList.add('opacity-100')
+        observer.unobserve(entry.target)
+      }
+    })
+  }
+
+  const leftElements = document.querySelectorAll('.fade-left')
+  const rightElements = document.querySelectorAll('.fade-right')
+  const observerLeft = new IntersectionObserver(handleLeftIntersection, intersectionParams)
+  const observerRight = new IntersectionObserver(handleRightIntersection, intersectionParams)
+
+  leftElements.forEach(element => {
+    observerLeft.observe(element)
+  })
+
+  rightElements.forEach(element => {
+    observerRight.observe(element)
+  })
+</script>
