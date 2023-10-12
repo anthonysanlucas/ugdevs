@@ -442,7 +442,12 @@
   {
     "id": "084",
     "name": "GUIJARRO RODRIGUEZ ALFONSO",
-    "reviews": []
+    "reviews": [
+      {
+        "text": "Muy buen profesor, maneja los temas de manera clara y concisa, si tu objetivo es aprender escoge la asignatura.",
+        "date": "12/10/2023"
+      }
+    ]
   },
   {
     "id": "085",
