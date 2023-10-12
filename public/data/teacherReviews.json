@@ -322,7 +322,12 @@
   {
     "id": "064",
     "name": "BOTTO TOBAR MIGUEL",
-    "reviews": []
+    "reviews": [
+      {
+        "text": "El mejor profesor, lastima que ya no está en software, para Modelamiento de software revisen sus diapositivas.",
+        "date": "11/10/2023"
+      }
+    ]
   },
   {
     "id": "065",
