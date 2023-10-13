@@ -426,7 +426,12 @@
   {
     "id": "077",
     "name": "DIAZ CADENA ANGELA",
-    "reviews": []
+    "reviews": [
+      {
+        "text": "Muy buena profesora con la cual se empatiza mucho, no manda tantos deberes, son acorde a lo que enseña y no son complicados, los exámenes y lecciones no son complicados. No te estresaras con la materia. 10/10 ",
+        "date": "13/10/2023"
+      }
+    ]
   },
   {
     "id": "078",
@@ -646,7 +651,12 @@
   {
     "id": "119",
     "name": "YANZA MONTALVAN ANGELA",
-    "reviews": []
+    "reviews": [
+      {
+        "text": "Es buena profesora, pero manda muchos deberes y actividades en grupos, con ella aprendes a la fuerza pero aprendes bien, Es pasable pero te vas a estresar mucho con los deberes, los exámenes y lecciones no son del todo complicados si atendiste bien.",
+        "date": "13/10/2023"
+      }
+    ]
   },
   {
     "id": "120",
