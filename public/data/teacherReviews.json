@@ -446,7 +446,12 @@
   {
     "id": "080",
     "name": "GALARZA SOLEDISPA MARIA",
-    "reviews": []
+    "reviews": [
+      {
+        "text": "La profesora en cuestión se distingue por su amabilidad y comprensión, ofreciendo tareas de una dificultad moderada y mostrándose siempre receptiva a las preguntas de los estudiantes. Las asignaturas dictadas por ella, son muy buenas.",
+        "date": "13/10/2023"
+      }
+    ]
   },
   {
     "id": "081",
@@ -786,7 +791,12 @@
   {
     "id": "145",
     "name": "GARCIA MENDOZA GUSTAVO",
-    "reviews": []
+    "reviews": [
+      {
+        "text": "Tiene la peor metodología de calificación, no valora el esfuerzo del estudiante y tiene preferencias.",
+        "date": "13/10/2023"
+      }
+    ]
   },
   {
     "id": "146",
@@ -816,7 +826,12 @@
   {
     "id": "151",
     "name": "JAMA ZAMBRANO ALEXIS",
-    "reviews": []
+    "reviews": [
+      {
+        "text": "Excelente catedrático, una persona honesta y comprometida con sus estudiantes. A decir verdad, lo mejorcito de la UG.",
+        "date": "13/10/2023"
+      }
+    ]
   },
   {
     "id": "152",
@@ -891,7 +906,12 @@
   {
     "id": "166",
     "name": "RAMIREZ ZAMBRANO GUSTAVO",
-    "reviews": []
+    "reviews": [
+      {
+        "text": "Uno de los mejores docentes de la facultad. Empatiza con el estudiante y da sus clases con entusiasmo. Envía muchos proyectos, per considero que son necesarios para aprender la materia. Definitivamente te prepara para que desarrolles un buen trabajo como profesional. 10/10",
+        "date": "13/10/2023"
+      }
+    ]
   },
   {
     "id": "167",
@@ -926,7 +946,12 @@
   {
     "id": "173",
     "name": "VARGAS JIMENEZ JULIO",
-    "reviews": []
+    "reviews": [
+      {
+        "text": "Falta a clases, no enseña, hace lo que le da la gana, tiene fama de dejar a todos y si tienes la suerte de pasar, avanzas sin bases para mecánica 2.",
+        "date": "13/10/2023"
+      }
+    ]
   },
   {
     "id": "174",
