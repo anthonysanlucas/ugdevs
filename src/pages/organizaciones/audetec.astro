@@ -1,0 +1,70 @@
+---
+import OrganizationPage from '@/layouts/OrganizationPage.astro'
+---
+
+<OrganizationPage
+  titlePage="AUDETEC | UG Devs"
+  currentUrl="organizaciones/audetec"
+  descriptionPage="Asociación Universitaria de Desarrollo Empresarial y Tecnológico"
+  organizationName="Asociación Universitaria de Desarrollo Empresarial y Tecnológico"
+  logo="/organizations/logo-audetec.webp">
+  <p slot="mision" class="text-black-dark text-center">
+    Fomentar el desarrollo empresarial y tecnológico en la comunidad universitaria, con el objetivo
+    de formar líderes capaces de contribuir al crecimiento económico y social del país.
+  </p>
+  <p slot="vision" class="text-black-dark text-center">
+    Convertirse en una organización de referencia en el ámbito empresarial y tecnológico, reconocida
+    por su contribución al desarrollo económico y social del país.
+  </p>
+  <section slot="content" class="section-container py-14">
+    <h3 class="font-medium text-black-dark text-xl mb-10">Cursos y Capacitaciones</h3>
+    <div
+      id="audetec-courses"
+      class="mt-8 grid gap-8 grid-auto-flow-dense grid-auto-rows-auto grid-cols-[repeat(auto-fill,_minmax(14rem,_1fr))]">
+    </div>
+  </section>
+</OrganizationPage>
+
+<script>
+  const SHEET_ID = '1n2_4tj_OWny4_BPNcM8kAyoGcchTaDR4551jCIOO_Do'
+  const SHEET_NAME = 'CURSOS'
+  const base = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?`
+
+  const SQL_QUERY = `SELECT A, B`
+  const query = encodeURIComponent(SQL_QUERY)
+  const courses = document.getElementById('audetec-courses')
+
+  fetch(`${base}&sheet=${SHEET_NAME}&tq=${query}`)
+    .then(res => res.text())
+    .then(rep => {
+      const jsonString = rep.substring(rep.indexOf('{'), rep.lastIndexOf('}') + 1)
+      const jsData = JSON.parse(jsonString)
+
+      const spreadsheetRows = jsData.table.rows.slice(1)
+
+      courses.innerHTML = spreadsheetRows
+        .map((row, index) => {
+          return `
+          <article class="flex flex-col justify-center items-center">
+            <a
+             href=${row.c[0].v}
+             target="_blank"
+             rel="noopener noreferrer">
+            <img
+             class="w-full max-w-[14rem] h-auto object-center rounded-md transition-transform duration-100 hover:scale-95"
+             src=${row.c[0].v}
+             alt="foto de cursos ${index}"
+             />
+            </a>
+            <a
+              href=${row.c[1].v}
+              class="block mt-4 underline underline-offset-2 text-primary-dark transition-colors duration-100 hover:text-primary">
+            Regístrate aquí
+            </a>
+          </article>
+        `
+        })
+        .join('')
+    })
+    .catch(error => console.log(error))
+</script>

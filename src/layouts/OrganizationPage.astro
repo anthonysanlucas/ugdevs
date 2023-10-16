@@ -1,0 +1,68 @@
+---
+import HeaderPage from '@/components/HeaderPage.astro'
+import FooterPage from '@/components/FooterPage.astro'
+import '@/styles/main.css'
+
+interface Props {
+  currentUrl: string
+  titlePage: string
+  descriptionPage: string
+  organizationName: string
+  logo: string
+}
+
+const { titlePage, descriptionPage, currentUrl, organizationName, logo } = Astro.props
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{titlePage}</title>
+    <meta name="title" content={titlePage} />
+    <meta name="description" content={descriptionPage} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content=`https://ugdevs.org/${currentUrl ?? null}` />
+    <meta property="og:title" content={titlePage} />
+    <meta property="og:description" content={descriptionPage} />
+    <meta property="og:image" content="https://i.postimg.cc/K8RBs3P3/ugdevs.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content=`https://ugdevs.org/${currentUrl ?? null}` />
+    <meta property="twitter:title" content={titlePage} />
+    <meta property="twitter:description" content={descriptionPage} />
+    <meta property="twitter:image" content="https://i.postimg.cc/K8RBs3P3/ugdevs.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-white bg-gradient-to-b from-white to-sky-50 min-h-screen">
+    <HeaderPage />
+    <main class="max-w-screen-lg mx-auto leading-8">
+      <header
+        class="section-container mt-6 py-8 text-balance mx-4 bg-gradient-to-b from-primary/30 via-primary/20 to-transparent rounded-t-md">
+        <img class="mx-auto mb-4 max-w-[125px]" src={logo} alt={'logo' + organizationName} />
+        <h1 class="mb-2 text-black-dark text-2xl text-center font-medium">
+          {organizationName}
+        </h1>
+        <section class="mt-6 text-sm gap-10">
+          <article class="mb-4">
+            <h2 class="mb-2 text-black-medium text-center font-medium">Misión</h2>
+            <slot name="mision" />
+          </article>
+          <article class="mb-4">
+            <h2 class="mb-2 text-black-medium text-center font-medium">Visión</h2>
+            <slot name="vision" />
+          </article>
+        </section>
+      </header>
+      <slot name="content" />
+    </main>
+    <FooterPage />
+  </body>
+</html>
