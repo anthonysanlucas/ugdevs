@@ -306,6 +306,10 @@
       {
         "text": "Excelente maestra, explica bien y sabe llegar a sus estudiantes.",
         "date": "12/10/2023"
+      },
+      {
+        "text": "Muy buena docente, con su debida atención durante la clase no se te debería de complicar realizar sus diferentes actividades. Las consultas las responde sin problema alguno (correo o durante la clase).",
+        "date": "16/10/2023"
       }
     ]
   },
@@ -421,7 +425,12 @@
   {
     "id": "076",
     "name": "CUENCA ORTEGA ANGEL",
-    "reviews": []
+    "reviews": [
+      {
+        "text": "Preferirás caminar en clavos antes que volver a otra materia con él, si sobrevives claro...",
+        "date": "16/10/2023"
+      }
+    ]
   },
   {
     "id": "077",
@@ -571,7 +580,12 @@
   {
     "id": "102",
     "name": "PARRALES BRAVO FRANKLIN",
-    "reviews": []
+    "reviews": [
+      {
+        "text": "No esperes a que te responda hasta el final de la clase porque usa videos pre grabados de clases pasadas, mas allá es un buen docente.",
+        "date": "16/10/2023"
+      }
+    ]
   },
   {
     "id": "103",
