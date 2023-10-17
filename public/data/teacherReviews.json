@@ -82,7 +82,12 @@
   {
     "id": "015",
     "name": "CHICALA ARROYAVE JORGE",
-    "reviews": []
+    "reviews": [
+      {
+        "text": "Si deseas aprender Bases de datos, él es el indicado, siempre con buen humor, risas acompañado de una buena cátedra de la materia.",
+        "date": "16/10/2023"
+      }
+    ]
   },
   {
     "id": "016",
@@ -237,7 +242,12 @@
   {
     "id": "045",
     "name": "REAL AVILES KARINA",
-    "reviews": []
+    "reviews": [
+      {
+        "text": "Es una docente muy estricta y si es bien complicada la verdad, a veces no nos entiende y se enoja si preguntamos algo.",
+        "date": "16/10/2023"
+      }
+    ]
   },
   {
     "id": "046",
@@ -297,7 +307,12 @@
   {
     "id": "055",
     "name": "YTURRALDE VILLAGOMEZ JUAN",
-    "reviews": []
+    "reviews": [
+      {
+        "text": "Muy estricto si no sabes matemáticas date de baja por favor.",
+        "date": "16/10/2023"
+      }
+    ]
   },
   {
     "id": "056",
@@ -330,7 +345,12 @@
   {
     "id": "059",
     "name": "ALONSO ANGUIZACA JOSE",
-    "reviews": []
+    "reviews": [
+      {
+        "text": "No llega al estudiante, solo lee diapositivas, deberes grupales bastantes, no se aprende a mi parecer.",
+        "date": "17/10/2023"
+      }
+    ]
   },
   {
     "id": "060",
@@ -409,7 +429,16 @@
   {
     "id": "072",
     "name": "CHAVEZ CUJILAN YELENA",
-    "reviews": []
+    "reviews": [
+      {
+        "text": "¡Excelente profesora! Sus clases siempre eran activas, siempre realizaba actividades de acuerdo a las clases, su pedagogía es excelente.",
+        "date": "16/10/2023"
+      },
+      {
+        "text": "Corazón de madre, enseña súper bien y se aprende, lo que enseña manda de deber, no cosas randoms.",
+        "date": "17/10/2023"
+      }
+    ]
   },
   {
     "id": "073",
@@ -587,7 +616,12 @@
   {
     "id": "101",
     "name": "ORTIZ ZAMBRANO JENNY",
-    "reviews": []
+    "reviews": [
+      {
+        "text": "Un poco de mal humor, explica y todo bien, participación sobre los temas, pero a veces algo grosera, en los exámenes bastantes preguntas, en materias teóricas.",
+        "date": "17/10/2023"
+      }
+    ]
   },
   {
     "id": "102",
@@ -662,7 +696,12 @@
   {
     "id": "115",
     "name": "UGARTE ALMEIDA TAMARA",
-    "reviews": []
+    "reviews": [
+      {
+        "text": "Envía bastantes deberes en su materia, bastante participación en clase, pero bastante bien, no toma lista así que es relajado…",
+        "date": "17/10/2023"
+      }
+    ]
   },
   {
     "id": "116",
