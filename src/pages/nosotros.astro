@@ -1,6 +1,7 @@
 ---
 import Base from '@/layouts/Base.astro'
-import { CONTRIBUTORS_LIST } from '@/data/contributors'
+import ContributorsImages from '@/components/ContributorsImages.astro'
+import Contributors from '@/components/home/Contributors.astro'
 ---
 
 <Base
@@ -78,23 +79,7 @@ import { CONTRIBUTORS_LIST } from '@/data/contributors'
           Contáctanos
         </a>y conviértete en un contribuidor.
       </p>
-      <section class="flex flex-wrap justify-start items-center mt-6 gap-4">
-        {
-          CONTRIBUTORS_LIST.map(contributor => (
-            <a
-              class="inline-block w-16 h-16 rounded-full overflow-hidden border-2 border-gray-200 transition-transform duration-100 hover:scale-95"
-              href={contributor.url}
-              target="_blank"
-              rel="noopener noreferrer">
-              <img
-                class="w-full h-full object-cover"
-                src={contributor.avatar}
-                alt={contributor.name}
-              />
-            </a>
-          ))
-        }
-      </section>
+      <ContributorsImages />
     </article>
   </section>
 </Base>
