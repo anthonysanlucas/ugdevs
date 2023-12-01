@@ -52,7 +52,12 @@
   {
     "id": "009",
     "name": "BARRIGA DIAZ RONALD",
-    "reviews": []
+    "reviews": [
+      {
+        "text": "En virtual solo lo veias 2 veces en todo el semestre, en presencial manda como deber y nota de leccion hacer un TikTok.",
+        "date": "28/10/2023"
+      }
+    ]
   },
   {
     "id": "010",
@@ -470,6 +475,10 @@
       {
         "text": "Que dios te acompañe, te desarrolla tu personaje.",
         "date": "16/10/2023"
+      },
+      {
+        "text": "Parece tener preferencia sobre algunos estudiantes y a ellos sí los ayuda a pasar a los demás será mejor que empiecen a rezar y aún así será difícil aprobar.",
+        "date": "30/11/2023"
       }
     ]
   },
