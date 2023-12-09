@@ -1,10 +1,9 @@
 ---
 import Base from '@/layouts/Base.astro'
 import Hero from '@/components/home/Hero.astro'
-import ToolsInformation from '@/components/home/ToolsInformation.astro'
-import Entrepreneurship from '@/components/home/Entrepreneurship.astro'
-import Contributors from '@/components/home/Contributors.astro'
+import ContributorsImages from '@/components/ContributorsImages.astro'
 import AudetecBanner from '@/components/home/AudetecBanner.astro'
+import ToolCards from '@/components/home/ToolCards.astro'
 ---
 
 <Base
@@ -12,10 +11,9 @@ import AudetecBanner from '@/components/home/AudetecBanner.astro'
   titlePage="UG Devs | Herramientas de Estudiantes de la Universidad de Guayaquil"
   descriptionPage="Más de 10.000 estudiantes se han beneficiado de estas herramientas, simulador de calificaciones, reseñas de profesores, emprendimientos y más en la Universidad de Guayaquil.">
   <Hero />
-  <ToolsInformation />
+  <ContributorsImages isCentered={true} />
+  <ToolCards />
   <AudetecBanner />
-  <Entrepreneurship />
-  <Contributors />
 </Base>
 
 <script>
@@ -25,36 +23,20 @@ import AudetecBanner from '@/components/home/AudetecBanner.astro'
     threshold: 0.1
   }
 
-  function handleLeftIntersection(entries, observer) {
+  const handleFadeUpIntersection = (entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('animate-fade-left')
+        entry.target.classList.add('animate-fade-up')
         entry.target.classList.add('opacity-100')
         observer.unobserve(entry.target)
       }
     })
   }
 
-  function handleRightIntersection(entries, observer) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate-fade-right')
-        entry.target.classList.add('opacity-100')
-        observer.unobserve(entry.target)
-      }
-    })
-  }
+  const fadeUpElements = document.querySelectorAll('.fade-up')
+  const observerFadeUp = new IntersectionObserver(handleFadeUpIntersection, intersectionParams)
 
-  const leftElements = document.querySelectorAll('.fade-left')
-  const rightElements = document.querySelectorAll('.fade-right')
-  const observerLeft = new IntersectionObserver(handleLeftIntersection, intersectionParams)
-  const observerRight = new IntersectionObserver(handleRightIntersection, intersectionParams)
-
-  leftElements.forEach(element => {
-    observerLeft.observe(element)
-  })
-
-  rightElements.forEach(element => {
-    observerRight.observe(element)
+  fadeUpElements.forEach(element => {
+    observerFadeUp.observe(element)
   })
 </script>

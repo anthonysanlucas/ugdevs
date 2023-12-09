@@ -1,0 +1,40 @@
+---
+import Calculator from '@/components/icons/Calculator.astro'
+import Message from '@/components/icons/Message.astro'
+import LineChart from '@/components/icons/LineChart.astro'
+
+const tools = [
+  {
+    svg: 'calculator',
+    title: 'Simulador de Calificaciones',
+    url: '/calculadoraug/promedio-parcial/'
+  },
+  {
+    svg: 'message',
+    title: 'Reseña de Profesores',
+    url: '/profesores/'
+  },
+  {
+    svg: 'lineChart',
+    title: 'Emprendimientos Estudiantiles',
+    url: '/emprendimientos/'
+  }
+]
+---
+
+<section class="section-container mt-10 py-10 justify-center items-center flex flex-wrap gap-6">
+  {
+    tools.map(tool => (
+      <a
+        href={tool.url}
+        class="fade-up w-full border text-slate-400 shadow-md border-slate-400 rounded-md max-w-xs h-36 p-6 opacity-0 transition-colors duration-100 hover:border-primary hover:text-primary">
+        {tool.svg == 'calculator' ? <Calculator /> : ''}
+        {tool.svg == 'message' ? <Message /> : ''}
+        {tool.svg == 'lineChart' ? <LineChart /> : ''}
+        <h2 class="text-start mt-4 text-lg tracking-tight font-semibold text-black-medium text-balance">
+          {tool.title}
+        </h2>
+      </a>
+    ))
+  }
+</section>
