@@ -2,23 +2,14 @@
 import Base from '@/layouts/Base.astro'
 import ViewReviews from '@/components/teacherReviews/ViewReviews.jsx'
 import ShareButton from '@/components/ShareButton.astro'
-import SentReviews from '@/components/teacherReviews/SendReviews.jsx'
-
-const recomendations = [
-  'No debe contener ningún tipo de lenguaje ofensivo.',
-  'Sé constructivo en tus críticas y sugerencias para que puedan ser útiles.',
-  'Agrega estrategias o consejos que ayuden a otros a aprobar la materia sin problema.',
-  'Intenta ser lo más breve y claro posible'
-]
 ---
 
 <Base
   titlePage="Reseñas de Profesores | UG Devs"
   descriptionPage="Guía definitiva para conocer cómo sera tu experencia en clase con los profesores de la Universidad de Guayaquil"
   currentUrl="profesores">
-  <section class="section-container py-14">
-    <h1 class="text-left font-extrabold text-black-dark text-3xl mb-10">Reseñas de Profesores</h1>
-    <div class="flex flex-col gap-10 lg:flex-row">
+  <section class="section-container max-w-screen-lg py-14 mx-auto">
+    <div class="flex flex-col gap-10">
       <ViewReviews client:load />
       <article class="w-full max-w-xl">
         <span class="grid grid-cols-[max-content,_1fr] gap-x-4">
@@ -39,39 +30,6 @@ const recomendations = [
           </div>
         </span>
       </article>
-    </div>
-  </section>
-  <section id="send-review" class="section-container py-14">
-    <h2 class="text-left font-extrabold text-black-dark text-3xl mb-10">
-      Realiza tus propias reseñas
-    </h2>
-    <div class="flex flex-col gap-10 justify-between lg:flex-row-reverse">
-      <article class="w-full max-w-xl">
-        <p class="block text-black-medium mb-4">Recomendaciones para hacer excelentes reseñas:</p>
-        <blockquote class="max-w-2xl p-4 bg-gray-300 rounded-md">
-          <ul class="text-black-dark space-y-2 text-sm sm:text-base">
-            {
-              recomendations.map(recomendation => (
-                <li class="flex items-start space-x-2">
-                  <svg
-                    class="flex-shrink-0 w-5 h-5 text-primary"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                  <span class="text-black-dark">{recomendation}</span>
-                </li>
-              ))
-            }
-          </ul>
-        </blockquote>
-      </article>
-      <SentReviews client:load />
     </div>
   </section>
 </Base>
